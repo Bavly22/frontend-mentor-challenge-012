@@ -1,0 +1,233 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Raleway';
+}
+body{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 1440px;
+    height: 800px;
+    background-color: hsl(229, 57%, 11%);
+    background-image: url('images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.one,.two{
+    background-color: hsl(228, 56%, 26%);
+    padding: 3em;
+}
+.one{
+    width: 26em;
+    height: 15.5em;
+    border-radius: 10px 120px 10px 10px;
+    margin-bottom: 1em;
+}
+.two{
+    width: 38em ;
+    height: 11.5em;
+    margin-top: 3em;
+    border-radius: 10px;
+    position: relative;
+}
+.one footer{
+    position: relative;
+    bottom: -40px;
+}
+.one footer img{
+    width: 3.9em;
+    height: 3.6em;
+    display: inline-block;
+    padding: 1em;
+    background-color:hsl(229, 57%, 11%) ;
+    border-radius: 10px;
+    margin-left: 1em;
+}
+.one footer img:nth-of-type(1){
+    width: 3.6em;
+    height: 3.6em;
+    margin-left: 0em;
+}
+.two header p{
+    color:hsl(243, 100%, 93%) ;
+}
+.two header span{
+    color: white;
+}
+.two main .lod{
+    width: 100%;
+    height: 1.6em;
+    background-color:rgb(22, 32, 78) ;
+    border-radius: 30px;
+    margin-top: 1.3em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.two footer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 0.7em;
+    font-weight: 700;
+    font-size: 0.9em;
+}
+.lod::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 60%;
+    background-image: linear-gradient(to right ,hsl(6, 100%, 80%), hsl(335, 100%, 65%) ) !important;
+    border-radius: 30px;
+    left: 4px;
+    animation-name: zero;
+    animation-duration:5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+.lod::before{
+    content: '';
+    position: absolute;
+    width: 2.6%;
+    left: 1%;
+    height: 50%;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 100;
+    animation-name: zero2;
+    animation-duration:5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes zero {
+    0% {
+        width: 0%;
+    }
+    20%{
+        width: 30%;
+    }
+    50%{
+        width: 60%;
+    }
+    to{
+        width: 70%;
+    }
+}
+@keyframes zero2 {
+    0% {
+        left:1%;
+    }
+    20%{
+        left: 28%;
+    }
+    50%{
+        left: 58%;
+    }
+    to{
+        left: 68%;
+    }
+}
+.two >p::after{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 30px;
+    border-color: transparent white transparent transparent;
+    right: 0px;
+    top: 38px;
+    display: none;
+}
+.two > p span{
+    color:  hsl(231, 5%, 48%);
+    font-size: 0.4em;
+    margin-left: 10px;
+}
+.two >p {
+    padding: 0.3em 0.6em;
+    background-color: white;
+    font-weight: 700;
+    font-size: 3em;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 12px;
+    position: absolute;
+    top: -45px;
+    right: 40px;
+    display: none;
+}
+.two:hover >p,
+.two > p::after{
+    display: block;
+}
+
+
+@media (max-width:700px){
+    .container{
+        width: 375px;
+        height: 670px;
+        background-color: hsl(229, 57%, 11%);
+        background-image: url('images/bg-mobile.png');
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .one,.two{
+        background-color: hsl(228, 56%, 26%);
+        padding: 3em;
+    }
+    .one{
+        width: 23.5em;
+        height: 15.5em;
+        border-radius: 10px 120px 10px 10px;
+        margin-bottom: 0;
+    }
+    .two{
+        width: 23.5em;
+        height: 12.5em;
+        margin-top: 0;
+        border-radius: 10px;
+        position: relative;
+    }
+    .two footer {
+        margin-top: 1em;
+    }
+    .two >p {
+        padding: 0.3em 0.6em;
+        background-color: white;
+        font-weight: 700;
+        font-size: 3em;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 12px;
+        position: absolute;
+        top: 140px;
+        right: 73px;    
+        display: none;
+    }
+    .two:hover >p{
+        display: inline-flex;
+    }
+    .two > p::after{
+        display: none;
+    }
+    .lod::before{
+        content: '';
+        position: absolute;
+        width: 4.7%;
+        height: 55%;
+    }
+}
